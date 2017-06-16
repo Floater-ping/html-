@@ -1,0 +1,140 @@
+@charset "utf-8";
+#search {
+	width: 100%;
+	min-width: 1263px;
+	height: 450px;
+	position: relative;
+	background: url(http://demo.ycku.com/html5/3/img/headline.jpg) no-repeat;
+	
+}
+
+#search .center {
+	width: 600px;
+	height: 60px;
+	background-color: #000;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -30px 0 0 -300px;
+	border-radius: 10px;
+	opacity: 0.6;
+}
+
+#search .search {
+	width: 446px;
+	height: 54px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -27px 0 0 -298px;
+	padding: 0 10px;
+	outline: none;
+	color: #666;
+	font-size: 24px;
+	border: 1px solid #666;
+	border-radius: 10px;
+}
+
+
+#search .button {
+	width: 120px;
+	height: 54px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -27px 0 0 175px;
+	padding: 0 10px;
+	outline: none;
+	color: #666;
+	font-size: 24px;
+	font-weight: 24px;
+	border: 1px solid #666;
+	border-radius: 10px;
+}
+
+#tour {
+	width: 100%;
+	min-width: 1263px;
+	height: 1140px;
+	margin: 30px auto;
+	text-align: center;
+}
+
+#tour .center h2 {
+	margin: 10px 0;
+	font-size: 45px;
+	letter-spacing: 2px;
+	color: #666;
+}
+
+#tour .center p {
+	color: #666;
+	margin: 10px 0;
+}
+#tour figure {
+	width: 380px;
+	border: 1px solid #ddd;
+	display: inline-block;
+	margin: 15px 12px;
+	padding: 4px;
+	border-radius: 4px;
+	position: relative;
+	text-align: left;
+}
+
+#tour figure img {
+	vertical-align: middle;
+	width: 380px;
+	
+}
+#tour figure figcaption {
+	text-align: left;
+	color: #777;
+	font-size: 14px;
+	letter-spacing: 1px;
+	line-height: 1.5;
+	margin: 4px 0;
+}
+
+#tour figure .info {
+	margin: 5px 0 0 0 ;
+}
+
+#tour .sat {
+	font-size: 14px;
+	color: #777;
+	font-style: normal;
+	letter-spacing: 1px;
+	float: right;
+	position: relative;
+	top: 4px;
+	right: 4px;
+}
+
+#tour .price {
+	color: #f60;
+	font-size: 14px;
+	letter-spacing: 1px;
+	text-align: left;
+	
+}
+
+#tour .price strong {
+	font-size: 20px;
+}
+
+#tour .type {
+	width: 90px;
+	height: 25px;
+	font-size: 14px;
+	line-height: 25px;
+	text-align: center;
+	color: #fff;
+	letter-spacing: 1px;
+	background-color: #59b200;
+	border-bottom-right-radius: 4px;
+	position: absolute;
+	top: 4px;
+	left: 4px;
+}
+
