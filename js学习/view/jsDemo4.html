@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			window.onload = function() {
+				var btn = document.getElementById('btn1');
+				var oText = document.getElementById('text1');
+				var oSelect = document.getElementById('selected1');
+				var oP = document.getElementById('p1');
+				btn.onclick = function() {
+					//					alert(btn.value);
+					//					var t = oText.value+oSelect.value
+					//					alert(t);
+					//alert(oP.innerHTML);
+					oP.innerHTML = oText.value;
+				};
+
+			};
+		</script>
+	</head>
+
+	<body>
+		<input id="text1" type="text" />
+
+		<select id="selected1">
+			<option value="北京">北京</option>
+			<option value="上海">上海</option>
+			<option value="杭州">杭州</option>
+		</select>
+		<input id="btn1" type="button" value="按钮" />
+		<p id="p1">这个一段文字－－－</p>
+	</body>
+
+</html>

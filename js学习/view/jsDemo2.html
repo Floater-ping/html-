@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jsDemo2</title>
+		<style>
+			div {
+				width: 200px;
+				height: 200px;
+				background-color: pink;
+			}
+			#div1 {
+				background-color: #F1F1F1;
+				display: none;
+			}
+			
+		</style>
+		
+		<script>
+			window.onload = function (){
+				var showBtn = document.getElementById('show_btn');
+				var hidenBtn = document.getElementById('hide_btn');
+				var div1 = document.getElementById('div1');
+				showBtn.onclick = function (){
+					div1.style.display = 'block';
+				};
+				
+				hidenBtn.onclick = function (){
+					div1.style.display = 'none';
+				};
+			};
+		</script>
+	</head>
+	<body>
+		<input id="show_btn" type="button" value="显示"/>
+		<input id="hide_btn" type="button" value="隐藏" />
+		<div id="div1"></div>
+		<div></div>
+		
+	</body>
+</html>

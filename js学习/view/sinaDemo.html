@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Sina</title>
+		<link rel="stylesheet" style="text/css" href="../css/sina.css" />
+		<script>
+			/*
+			 * JS中如何获取元素
+			 * 1.ID
+			 * 2.
+			 * 事件：鼠标事件（onclick,onmouseover,onmouseout,onmouserdown,onmouserup,onmousemove..），
+			 * 键盘事件，系统事件，表单事件，自定义事件。。
+			 */
+			window.onload = function() {
+				var li = document.getElementById('lis');
+				var ul = document.getElementById('ul1');
+				var a = document.getElementById('link');
+				
+				li.onmouseover = function() {
+					ul.style.display = 'block';
+					a.style.backgroundColor = '#fad502';
+					a.style.border = '1px solid blue';
+					
+				};
+				li.onmouseout = function () {
+					ul.style.display = 'none';
+					a.style.backgroundColor = '#F1F1F1';
+					a.style.border = 'none';
+				};
+			};
+		</script>
+	</head>
+
+	<body>
+		<ul>
+			<li id="lis" class="list">
+				<a id="link" href="###">微博</a>
+				<ul id="ul1">
+					<li>私信</li>
+					<li>评论</li>
+					<li>@我</li>
+				</ul>
+			</li>
+			<li class="list">
+				<a href="###">博客</a>
+				<ul>
+					<li>博客评论</li>
+					<li>未读提醒</li>
+				</ul>
+			</li>
+			<li class="list">
+				<a href="###">邮箱</a>
+				<ul>
+					<li>免费邮箱</li>
+					<li>VIP邮箱</li>
+					<li>企业邮箱</li>
+				</ul>
+			</li>
+		</ul>
+
+	</body>
+
+</html>

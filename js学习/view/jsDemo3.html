@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jsDemo3</title>
+		<style>
+			body {
+				position: relative;
+			}
+			strong {
+				font-size: 28px;
+				display: inline-block;
+				margin: 20px 0 10px 20px;
+			}
+			input {
+				width: 70px;
+				height: 35px;
+				border: none;
+			}
+			#configBtn {
+				color: white;
+				background-color: red;
+			}
+			#setDiv {
+				width: 100px;
+				height: 100px;
+				background-color: pink;
+				border: 3px solid black;
+				margin-left: 20px;
+			}
+			
+			#BGDiv {
+				width: 100%;
+				height: 1000px;
+				position: absolute;
+				top: 0;
+				margin: 0 auto;
+				background-color: rgba(0,0,0,0.4);
+				display: none;
+			}
+			
+			#BGDiv>div {
+				width: 300px;
+				height: 200px;
+				background-color: white;
+				border: 15px solid darkgrey;
+				margin: 0 auto;
+				margin-top: 150px;
+				opacity:initial;
+			}
+			hgroup {
+				padding: 6px 0;
+			}
+			em {
+				display: inline-block;
+				width: 126px;
+				padding-left: 14px;
+				font-style: normal;
+				font-size: 18px;
+				
+			}
+			ul,li {
+				list-style: none;
+				display: inline-block;
+				margin: 0;
+				padding: 0;
+			}
+			li {
+				width: 40px;
+				height: 30px;
+				font-size: 12px;
+				text-align: center;
+				line-height: 30px;
+				background-color: #F1F1F1;
+			}
+			
+			.colorBtn {
+				color: #F1F1F1; 
+			}
+			
+			.settingBtn {
+				color: #CCCCCC;
+				font-size: 15px;
+				background-color: darkblue;
+				margin: 10px 0;
+			}
+			
+			#resumeBtn {
+				margin-left: 80px;
+				
+			}
+		</style>
+		<script>
+			window.onload = function (){
+				var configBtn = document.getElementById('configBtn');
+				var setDiv = document.getElementById('setDiv');
+				var BGDiv = document.getElementById('BGDiv');
+				var liRed = document.getElementById('liRed');
+				var liYellow = document.getElementById('liYellow');
+				var liBlue = document.getElementById('liBlue');
+				var resumeBtn = document.getElementById('resumeBtn');
+				var doneBtn = document.getElementById('doneBtn');
+				
+				configBtn.onclick = function (){
+					BGDiv.style.display = 'block';
+				};
+				
+				
+				liRed.onclick = function (){
+					setDiv.style.backgroundColor = 'red';
+				};
+				liYellow.onclick = function (){
+					setDiv.style.backgroundColor = 'yellow';
+				};
+				liBlue.onclick = function (){
+					setDiv.style.backgroundColor = 'blue';
+				};
+				
+				resumeBtn.onclick = function (){
+					setDiv.style.width = '100px';
+					setDiv.style.height = '100px';
+					setDiv.style.backgroundColor = 'pink'
+					hideBGDiv();
+				};
+				
+				doneBtn.onclick = hideBGDiv;
+				function hideBGDiv(){
+					BGDiv.style.display = 'none';
+				}
+				
+			};
+		</script>
+	</head>
+	<body>
+		<strong>轻微下面的DIV设置样式:</strong>
+		<input id="configBtn" type="button" value="点击设置"／>
+		<div id="setDiv"></div>
+		
+		<div id="BGDiv">
+			<div>
+				<hgroup>
+					<em>请选择背景色：</em>
+					<ul>
+						<li id="liRed" class="colorBtn" style="background-color: red;">红</li>
+						<li id="liYellow" class="colorBtn" style="background-color: yellow;">黄</li>
+						<li id="liBlue"  class="colorBtn" style="background-color: blue;">蓝</li>
+					</ul>
+				</hgroup>
+				<hgroup>
+					<em>请选择宽(px)：</em>
+					<ul>
+						<li id="liRed">200</li>
+						<li id="liYellow">300</li>
+						<li id="liBlue">400</li>
+					</ul>
+				</hgroup>
+				<hgroup>
+					<em>请选择高(px)：</em>
+					<ul>
+						<li id="liRed">200</li>
+						<li id="liYellow">300</li>
+						<li id="liBlue">400</li>
+					</ul>
+				</hgroup>
+				
+				<input id="resumeBtn" class="settingBtn" type="button" value="恢复" />
+				<input id="doneBtn" class="settingBtn" type="button" value="确定" />
+			</div>
+		</div>
+			
+	</body>
+</html>

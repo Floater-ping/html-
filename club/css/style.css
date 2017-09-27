@@ -1,0 +1,100 @@
+@charset "utf-8";
+
+body,
+h1,
+ul,
+li,
+header,
+h2,
+h3,
+h4,
+p,
+figure,
+figcaption,
+img,
+em,
+span,
+footer,
+address,
+fieldset {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: #f4f5f9;
+	font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei UI", "Microsoft YaHei", SimHei, "\5B8B\4F53", simsun, sans-serif;
+	
+}
+
+ul,
+ol {
+	list-style: outside none none;
+}
+
+a {
+	text-decoration: none;
+}
+
+/*img {
+	display: block;
+	width: 100%;
+}*/
+
+div,
+figure,
+figcaption {
+	box-sizing: border-box;
+}
+
+.none {
+	display: none;
+}
+
+
+/*清理浮动*/
+
+.clearfix:after {
+	content: ".";
+	height: 0;
+	display: block;
+	clear: both;
+	visibility: hidden;
+}
+
+#root {
+	max-width: 640px;
+	margin: 0 auto;
+}
+#header {
+	width: 100%;
+	height: 45px;
+	position: fixed;
+	top: 0;
+	z-index: 9999;
+}
+
+#header .nav {
+	
+	text-align: center;
+	background-color: #353439;
+	position: relative;
+}
+
+#header h2 {
+	display: inline-block;
+	line-height: 45px;
+	color: #fff;
+	font-size: 18px;
+}
+
+
+#header img {
+	width: 24px;
+	height: 24px;
+}
+#header .right {
+	position: absolute;
+	right: 12px;
+	top: 10.5px;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#img1 {
+				width: 200px;
+				height: 200px;
+			}
+		</style>
+
+		<script>
+			window.onload = function() {
+				//				var oImg1 = document.getElementById('img1');
+				//				var oIp1 = document.getElementById('ip1');
+				//				oImg1.onclick = function (){
+				//					alert(oImg1.src);
+				//					oIp1.value = oImg1.src;
+				//				};
+				var oImg1 = document.getElementById('img1');
+				var oIp1 = document.getElementById('ip1');
+				oImg1.onclick = function() {
+					alert(oImg1.src);
+					oIp1.value = oImg1.src;
+				};
+				/// 不能用于做判断的值
+				/**
+				 * 1.所有的相对路径（img src href）
+				 * 2.颜色值
+				 * 3.innerHTML 的值
+				 * */
+
+			};
+		</script>
+	</head <body>
+	<input id="ip1" type="text" />
+	<img id="img1" src="../images/cat.jpg" />
+	</body>
+
+</html>

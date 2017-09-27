@@ -1,0 +1,156 @@
+@charset "utf-8";
+body,section,h2,span,h3 {
+	margin: 0;
+	padding: 0;
+}
+
+div,
+section {
+	box-sizing: border-box;
+}
+
+img {
+	display: block;
+	width: 100%;
+}
+
+#BGid {
+	margin: 0 auto;
+	max-width: 640px;
+	background-color: #85c03b;
+	
+}
+
+#BGid .pHeader {
+	max-width: 640px;
+	margin: 0 auto;
+	z-index: 99999;
+}
+
+
+#BGid .colorView {
+	max-width: 640px;
+	margin: 0px auto;
+	padding-bottom: 4px;
+	padding-top: 10px;
+	
+}
+
+#BGid .colorView .cardSection {
+	max-width: 640px;
+	height: 181px;
+	color: #00ab23;
+	background: url(http://image.51toc.net/lhj/img/mayiqinzi/2.png) no-repeat;
+	background-size: 100% 100%;
+	border-radius: 8px;
+	padding: 12px;
+	margin: 0 20px 15px 20px;
+	position: relative;
+	
+}
+
+#BGid .colorView .cardSection h2 {
+	font-size: 30px;
+}
+
+#BGid .colorView .cardSection .price {
+	font-size: 36px;
+	float: left;
+	position: absolute;
+	bottom: 10px;
+}
+
+#BGid .colorView .cardSection .buy {
+	font-size: 25px;
+	color: #eee;
+	float: right;
+	position: absolute;
+	bottom: 15px;
+	right: 15px;
+}
+
+/*购买须知*/
+
+#BGid .buyNotes .buyNotes {
+	margin: 0;
+	background-color: green;
+	
+	
+}
+#BGid .buyNotes .purchaseNotes {
+	padding-bottom: 10px;
+	
+}
+
+#BGid .buyNotes .purchaseNotes h3 {
+	max-width: 640px;
+	height: 72px;
+	color: #00ab23;
+	font-size: 25px;
+	line-height: 72px;
+	text-align: center;
+	background: url(http://image.51toc.net/lhj/img/mayiqinzi/3.png) no-repeat center center;
+
+}
+
+
+#BGid .buyNotes ul {
+	color: #fff;
+	font-size: 20px;
+	margin: 0;
+	/*padding-bottom: 10px;*/
+	letter-spacing: 1px;
+}
+
+#BGid .buyNotes .purchaseNotes p {
+	color: #fff;
+	font-size: 20px;
+	margin: 12px;
+	letter-spacing: 1px;
+	text-align: center;
+	padding: 0 0 30px 0;
+	margin: 0 auto;
+}
+
+/*页面尺寸小于479时*/
+@media (max-width:479px) {
+	
+	#BGid .colorView .cardSection {
+		height: 131px;
+	}
+	
+	#BGid .colorView .cardSection h2 {
+		font-size: 24px;
+		
+	}
+	
+	#BGid .colorView .cardSection .price {
+		font-size: 26px;
+	}
+	
+	#BGid .colorView .cardSection .buy {
+		font-size: 20px;
+	}
+	
+	#BGid .buyNotes .purchaseNotes h3 {
+		font-size: 20px;
+		background-size: 150px 50px;
+		
+	}
+	#BGid .buyNotes ul,#BGid .buyNotes .purchaseNotes p {
+		font-size: 14px;
+	}
+	
+}
+/*页面尺寸大于479且小于639时*/
+@media (min-width:479px) and (max-width:639px) {
+	
+	
+}
+
+/*页面尺寸大于639时*/
+@media (min-width:639px) {
+	
+	
+	
+}

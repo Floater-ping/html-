@@ -42,7 +42,9 @@ img {
 	width: 100%;
 }
 
-div,figure,figcaption {
+div,
+figure,
+figcaption {
 	box-sizing: border-box;
 }
 
@@ -50,7 +52,9 @@ div,figure,figcaption {
 	display: none;
 }
 
+
 /*清理浮动*/
+
 .clearfix:after {
 	content: ".";
 	height: 0;
@@ -86,10 +90,10 @@ div,figure,figcaption {
 	display: block;
 }
 
-#header .link a:hover,#header .link .active {
+#header .link a:hover,
+#header .link .active {
 	background-color: #000;
 }
-
 
 #footer {
 	max-width: 6.4rem;
@@ -127,7 +131,6 @@ div,figure,figcaption {
 #adver h3 {
 	font-size: 0.14rem;
 }
-
 
 #search {
 	max-width: 6.4rem;
@@ -170,7 +173,6 @@ div,figure,figcaption {
 	margin: 0.15rem auto;
 	padding: 0 0.1rem;
 	color: #666;
-	
 }
 
 #tour {
@@ -195,15 +197,12 @@ div,figure,figcaption {
 	margin: 0.05rem 0 0.1rem 0;
 }
 
-
 #tour .container figure {
 	width: 50%;
 	font-size: 0.16rem;
 	background-color: #eee;
 	padding: 0 0 0.05rem 0;
 	float: left;
-	
-	
 }
 
 #tour .container img {
@@ -267,7 +266,9 @@ div,figure,figcaption {
 	margin: 0.15rem auto;
 }
 
-.information h2,.ticket h2{
+.information h2,
+.ticket h2,
+.about h2 {
 	color: #666;
 	padding: 0 0 0.15rem 0;
 	border-bottom: 0.01rem dashed #999;
@@ -276,7 +277,6 @@ div,figure,figcaption {
 .information figure {
 	margin: 0.15rem 0 0 0;
 	position: relative;
-	
 }
 
 .information figure:after {
@@ -285,12 +285,11 @@ div,figure,figcaption {
 	visibility: hidden;
 	display: block;
 	clear: both;
-	
 }
 
 .information figure img {
 	width: 50%;
-	height: 1.246rem;
+	/*height: 2rem;*/
 	float: left;
 }
 
@@ -299,7 +298,10 @@ div,figure,figcaption {
 	float: right;
 }
 
-
+.information figcaption h2,
+.information figcaption h3 {
+	font-size: 0.14rem;
+}
 
 .information figcaption .title {
 	border: none;
@@ -318,14 +320,12 @@ div,figure,figcaption {
 	color: #f60;
 }
 
-
 .ticket fieldset {
 	border: none;
 }
 
 .ticket .type {
 	margin: 0.2rem 0 0.1rem 0;
-	
 }
 
 .ticket .type mark {
@@ -334,7 +334,7 @@ div,figure,figcaption {
 	background-color: #458B00;
 	border-radius: 0.04rem;
 	padding: 0.05rem 0.08rem;
-	margin: 0 0.1rem 0 0.16rem;	
+	margin: 0 0.1rem 0 0.16rem;
 }
 
 .ticket .form {
@@ -358,7 +358,6 @@ div,figure,figcaption {
 	border-radius: 0.04rem;
 	margin: 0.02rem 0;
 	padding: 0.05rem;
-	
 }
 
 .ticket .form .submit {
@@ -372,69 +371,201 @@ div,figure,figcaption {
 	margin: 0 auto;
 }
 
+.ticket .new {
+	margin: 0.2rem 0 0 0;
+}
+
 .ticket .new ul {
 	margin: 0.2rem 0 0 0;
 }
+
 .ticket .new ul li {
 	display: inline-block;
 	padding: 0.05rem 0.1rem;
 }
+
 .ticket .new ul li:first-child {
 	padding-left: 0;
 }
 
-.ticket .new ul li:nth-child(2),.ticket .new ul li:hover {
+.ticket .new ul li:nth-child(2),
+.ticket .new ul li:hover {
 	color: #fff;
 	background-color: #458B00;
 	border-radius: 0.04rem;
 }
 
+.ticket .new table {
+	width: 100%;
+	border-collapse: collapse;
+	border: 0.01rem solid #ddd;
+	margin: 0.01rem 0 0 0;
+}
 
+.ticket .new table th {
+	padding: 0.1rem 0;
+	border-bottom: 0.01rem solid #ddd;
+	font-weight: normal;
+}
 
-@media (min-width:480px) and (max-width:640px) {
+.ticket .new table td {
+	padding: 0.1rem 0;
+	text-align: center;
+	border-bottom: 0.01rem solid #ddd;
+}
+
+.ticket .new table .price {
+	color: #f60;
+}
+
+.ticket .new table tr:nth-child(2n) {
+	background-color: #fafafa;
+}
+
+.ticket .new table tr:hover {
+	background-color: #eee;
+}
+
+.ticket .new table .reserve {
+	color: #fff;
+	background-color: #f60;
+	text-align: center;
+	border-radius: 0.04rem;
+	padding: 0.05rem 0.08rem;
+	display: inline-block;
+}
+
+.ticket .new table .more2 {
+	color: #666;
+	font-size: 0.14rem;
+	text-align: center;
+	margin: 0 auto;
+	display: block;
+	cursor: pointer;
+}
+
+.about p {
+	color: #666;
+	line-height: 2;
+	margin: 0.2rem 0;
+}
+
+.about address {
+	font-style: normal;
+	color: #666;
+	font-size: 0.18rem;
+	line-height: 1.6;
+	margin: 0.2rem 0;
+}
+
+/*页面尺寸大于639时*/
+@media (min-width:639px) {
 	#tour h2,.information .price strong {
-		font-size: 0.26rem;
+		font-size: 0.28rem;
 	}
 	#tour h3 {
-		font-size: 0.16rem;
-	}
-	
-	.information h2,.ticket h2,.ticket h2 {
 		font-size: 0.18rem;
 	}
-	
-	.information h3,.information .price,.ticket .type,.ticket .form,.ticket .form input,.ticket .form .submit {
+	#tour .container figcaption {
 		font-size: 0.16rem;
 	}
-	#footer {
+	#tour .container .price {
 		font-size: 0.16rem;
 	}
-}
-
-
-/*小于480px*/
-
-@media (max-width: 480px) {
-	#tour h2,.information .price strong {
-		font-size: 0.20rem;
+	#tour .container .price strong {
+		font-size: 0.24rem;
 	}
-	#tour h3 {
-		font-size: 0.12rem;
-	}
-	
-	.information h2,,.ticket h2,.ticket h2 {
-		font-size: 0.16rem;
-	}
-	
-	.information h3,.information .price,.ticket .type,.ticket .form,.ticket .form input,.ticket .form .submit {
+	#tour .sat {
 		font-size: 0.14rem;
 	}
-	
 	#footer {
-		font-size: 0.13rem;
+		font-size: 0.16rem;
+	}
+	#headline h2 {
+		font-size: 0.22rem;
+	}
+	#headline h3 {
+		font-size: 0.14rem;
+	}
+	.about h2, .scenery h2, .ticket h2, .information h2 {
+		font-size: 0.20rem;
+	}
+	.about p,.about address,.ticket .type,.ticket .form,.ticket .form input,.ticket .form .submit,.ticket .new,.information h2, .information h3,.information .price {
+		font-size: 0.18rem;
+	}
+
+}
+
+/*页面尺寸大于479且小于639时*/
+@media (min-width:479px) and (max-width:639px) {
+	#tour h2,.information .price strong {
+		font-size: 0.24rem;
+	}
+	#tour h3 {
+		font-size: 0.14rem;
+	}
+	#tour .container figcaption {
+		font-size: 0.14rem;
+	}
+	#tour .container .price {
+		font-size: 0.14rem;
+	}
+	#tour .container .price strong {
+		font-size: 0.22rem;
+	}
+	#tour .sat {
+		font-size: 0.12rem;
+	}
+	#footer {
+		font-size: 0.14rem;
+	}
+	#headline h2 {
+		font-size: 0.20rem;
+	}
+	#headline h3 {
+		font-size: 0.12rem;
+	}
+	.about h2, .scenery h2, .ticket h2, .information h2 {
+		font-size: 0.18rem;
+	}
+	.about p,.about address,.ticket .type,.ticket .form,.ticket .form input,.ticket .form .submit,.ticket .new,.information h2, .information h3,.information .price {
+		font-size: 0.16rem;
 	}
 }
 
-
-
-
+/*页面尺寸小于479时*/
+@media (max-width:479px) {
+	#tour h2,.information .price strong {
+		font-size: 0.18rem;
+	}
+	#tour h3 {
+		font-size: 0.14rem;
+	}
+	#tour .container figcaption {
+		font-size: 0.12rem;
+	}
+	#tour .container .price {
+		font-size: 0.12rem;
+	}
+	#tour .container .price strong {
+		font-size: 0.16rem;
+	}
+	#tour .sat {
+		font-size: 0.10rem;
+	}
+	#footer {
+		font-size: 0.12rem;
+	}
+	#headline h2 {
+		font-size: 0.18rem;
+	}
+	#headline h3 {
+		font-size: 0.10rem;
+	}
+	.about h2, .scenery h2, .ticket h2, .information h2 {
+		font-size: 0.16rem;
+	}
+	.about p,.about address,.ticket .type,.ticket .form,.ticket .form input,.ticket .form .submit,.ticket .new,.information h2, .information h3,.information .price {
+		font-size: 0.14rem;
+	}
+}

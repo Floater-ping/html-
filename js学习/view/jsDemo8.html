@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#content {
+				width: 400px;
+				height: 400px;
+				border: 10px solid #ccc;
+				margin: 20px auto 0;
+				position: relative;
+			}
+			
+			#content a {
+				width: 40px;
+				height: 40px;
+				background-color: #000;
+				border: 5px solid #fff;
+				position: absolute;
+				text-align: center;
+				text-decoration: none;
+				line-height: 35px;
+				color: #fff;
+				font-size: 30px;
+				top: 175px;
+				font-weight: bold;
+				filter: alpha(opacity:70);
+				opacity: 0.7;
+			}
+			
+			#content a:hover {
+				filter: alpha(opacity:90);
+				opacity: 0.9;
+			}
+			
+			#prev {
+				left: 10px;
+			}
+			
+			#next {
+				right: 10px;
+			}
+			
+			#text,
+			#span1 {
+				position: absolute;
+				left: 0;
+				right: 0;
+				width: 400px;
+				height: 30px;
+				line-height: 30px;
+				margin: 0;
+				color: #fff;
+				background-color: #000;
+				text-align: center;
+				filter: alpha(opacity:60);
+				opacity: 0.6;
+			}
+			
+			#span1 {
+				top: 0;
+				font-weight: bold;
+			}
+			
+			#text {
+				bottom: 0;
+			}
+			
+			#imgContent {
+				width: 400px;
+				height: 400px;
+				background-color: gainsboro;
+			}
+			
+			#headerCenter {
+				width: 210px;
+				margin: 0 auto;
+			}
+			
+			button {
+				width: 100px;
+				height: 30px;
+				line-height: 30px;
+				padding: 0;
+			}
+		</style>
+
+		<script>
+			window.onload = function() {
+				// 图片
+				var arrURL = ['http://pic.qqtn.com/up/2017-8/2017080411115875945.jpg',
+					'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1506059911&di=f25958a5dddecd519527c52bf062fa24&imgtype=jpg&er=1&src=http%3A%2F%2Fimg16.3lian.com%2Fgif2016%2Fq25%2F64%2F26.jpg',
+					'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1505465216249&di=7816a68bbadd0ca9756e0430e998ea82&imgtype=0&src=http%3A%2F%2Fimg17.3lian.com%2Fd%2Ffile%2F201701%2F16%2F0b253608fa17c559a8426c2866fcb86f.png',
+					'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1505465286215&di=8d16865b9386faff67043d0a5272b28d&imgtype=0&src=http%3A%2F%2Fcdn.duitang.com%2Fuploads%2Fitem%2F201604%2F15%2F20160415214153_3VPct.jpeg'
+				];
+				var arrText = ['淘气的二哈1', '淘气的二哈2', '淘气的二哈3', '淘气的二哈4'];
+
+				var oPrev = document.getElementById('prev');
+				var oNext = document.getElementById('next');
+				var oSpan1 = document.getElementById('span1');
+				var oImgContent = document.getElementById('imgContent');
+				var oText = document.getElementById('text');
+				var num = 0;
+				showDetail();
+				var oBtn1 = document.getElementById('btn1');
+				var oBtn2 = document.getElementById('btn2');
+				var isCircle = true;
+				oBtn1.onclick = function() {
+					// 循环
+					isCircle = true;
+				};
+
+				oBtn2.onclick = function() {
+					// 顺序
+					isCircle = false;
+				};
+
+				oPrev.onclick = function() {
+					num--;
+					if(num == -1) {
+						if(isCircle) {
+							num = arrText.length - 1;
+						} else {
+							num++;
+							return;
+						}
+					}
+					showDetail();
+				};
+				oNext.onclick = function() {
+					num++;
+					if(num == arrText.length) {
+						if(isCircle) {
+							num = 0;
+						} else {
+							num--;
+							return;
+						}
+					}
+					showDetail();
+				};
+
+				function showDetail() {
+					oImgContent.src = arrURL[num];
+					oSpan1.innerHTML = num + 1 + ' / ' + arrText.length;
+					oText.innerHTML = arrText[num];
+				};
+
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="headerCenter">
+			<button id="btn1">循环切换</button>
+			<button id="btn2">顺序切换</button>
+		</div>
+
+		<div id="content">
+			<span id="span1">0 / 4</span>
+			<a id="prev">&lt;</a>
+			<img id="imgContent" />
+			<a id="next">&gt;</a>
+			<p id="text">图片描述正在计算。。。。</p>
+		</div>
+	</body>
+
+</html>
