@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			ul,
+			img,
+			p {
+				margin: 0;
+				padding: 0;
+			}
+			
+			li {
+				list-style: none;
+			}
+			
+			body {
+				background-color: #333;
+			}
+			
+			#pic {
+				width: 400px;
+				height: 500px;
+				position: relative;
+				margin: 0 auto;
+				background: url(../images/load.gif) no-repeat center;
+			}
+			
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+			
+			#pic ul {
+				width: 40px;
+				position: absolute;
+				top: 0;
+				right: -50px;
+			}
+			
+			#pic li {
+				width: 40px;
+				height: 40px;
+				margin-bottom: 4px;
+				background-color: #666;
+			}
+			
+			#pic .active {
+				background-color: #FC3;
+			}
+			
+			#pic p,
+			#pic span {
+				width: 400px;
+				height: 30px;
+				line-height: 30px;
+				text-align: center;
+				position: absolute;
+				left: 0;
+				color: #000;
+			}
+			
+			#pic p {
+				bottom: 0;
+			}
+			
+			#pic span {
+				top: 0;
+			}
+		</style>
+
+		<script>
+			window.onload = function() {
+				var oDiv = document.getElementById('pic');
+				var oImage = oDiv.getElementsByTagName('img')[0];
+				var oSpan = oDiv.getElementsByTagName('span')[0];
+				var oP = oDiv.getElementsByTagName('p')[0];
+				var oUL = oDiv.getElementsByTagName('ul')[0];
+				var aLi = oUL.getElementsByTagName('li');
+				var arrText = ['haha1', 'haha2', 'haha3', 'haha4'];
+				var arrUrl = ['../images/haha1.jpg', '../images/haha2.jpg', '../images/haha3.jpg', '../images/haha4.jpg'];
+				var num = 0;
+				var arrUrlLenght = arrUrl.length;
+				for(var i = 0; i < arrUrlLenght; i++) {
+					oUL.innerHTML += '<li></li>';
+				}
+				oDiv.style.background = 'none';
+
+				var lastLi;
+				// 给li添加点击事件
+				for(var i = 0; i < aLi.length; i++) {
+					aLi[i].index = i;
+					aLi[i].onclick = function() {
+						if(this.index == lastLi.index) {
+							return;
+						}
+						num = this.index;
+						changeShowImage();
+					};
+					if(i == 0) {
+						lastLi = aLi[i];
+						changeShowImage();
+					}
+				}
+
+				function changeShowImage() {
+					lastLi.className = '';
+					oImage.src = arrUrl[num];
+					oSpan.innerHTML = num + 1 + ' / ' + arrUrlLenght;
+					oP.innerHTML = arrText[num];
+					aLi[num].className = 'active';
+					lastLi = aLi[num];
+				};
+
+			};
+		</script>
+	</head>
+
+	<body>
+		<div id="pic">
+			<img src="" />
+			<span>数量正在加载</span>
+			<p>文字说明正在加载</p>
+			<ul>
+			</ul>
+
+		</div>
+
+	</body>
+
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>QQ列表</title>
+		<style>
+			ul,
+			li,
+			h2,
+			p,
+			em {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+			h2 {
+				text-indent: 4px;
+				font-size: 20px;
+				height: 30px;
+				line-height: 30px;
+				border: 1px solid #d7d7d7;
+			}
+			
+			li {
+				padding-bottom: 10px;
+				position: relative;
+			}
+			
+			p {
+				text-indent: 12px;
+				color: dimgray;
+				padding-top: 4px;
+				display: none;
+			}
+			
+			em {
+				font-style: normal;
+				font-size: 20px;
+				position: absolute;
+				height: 30px;
+				line-height: 30px;
+				top: 0;
+				right: 10px;
+				color: burlywood;
+			}
+		</style>
+
+		<script>
+			window.onload = function() {
+				var QQListUL = document.getElementById('QQList');
+
+				var dateArr = [{
+						'groupTile': '特别关心',
+						'groupList': ['周俊楠', '周厉轩', '周展鹏']
+					},
+					{
+						'groupTile': '我的好友',
+						'groupList': ['周懿轩', '周弘文', '周泽楷 ']
+					},
+					{
+						'groupTile': '淡淡',
+						'groupList': ['贝贝', '雪莹', '楠楠']
+					},
+					{
+						'groupTile': '亲戚',
+						'groupList': ['刘叔', '小芳']
+					}
+				];
+				var dateArrLength = dateArr.length;
+				for(var i = 0; i < dateArrLength; i++) {
+					QQListUL.innerHTML += '<li></li>';
+				}
+				var groupLiArr = QQListUL.getElementsByTagName('li');
+				for(var i = 0; i < groupLiArr.length; i++) {
+					var groupArr = dateArr[i].groupList;
+					var groupLength = groupArr.length;
+					groupLiArr[i].innerHTML += '<h2>' + dateArr[i].groupTile + '</h2><em>' + groupLength + '</em>';
+
+					for(var j = 0; j < groupLength; j++) {
+						groupLiArr[i].innerHTML += '<p>' + groupArr[j] + '</p>'
+					}
+				}
+
+				var oH2Arr = QQListUL.getElementsByTagName('h2');
+
+				for(var i = 0; i < oH2Arr.length; i++) {
+					oH2Arr[i].index = i;
+					oH2Arr[i].active = false;
+					oH2Arr[i].onclick = function() {
+						var showBlock = 'none';
+						if(this.active == false) {
+							showBlock = 'block';
+							this.style.backgroundColor = 'pink';
+						} else {
+							this.style.backgroundColor = '#fff';
+						}
+						var oli = groupLiArr[this.index];
+						var opArr = oli.getElementsByTagName('p');
+						for(var i = 0; i < opArr.length; i++) {
+							opArr[i].style.display = showBlock;
+						}
+						this.active = !this.active;
+					};
+				}
+
+				var allPArr = QQListUL.getElementsByTagName('p');
+				var lastP;
+				for(var i = 0; i < allPArr.length; i++) {
+					allPArr[i].index = i;
+
+					allPArr[i].onclick = function() {
+						if(lastP != null) {
+							if(lastP.index == this.index) {
+								return;
+							}
+							lastP.style.backgroundColor = '#fff';
+						}
+
+						this.style.backgroundColor = '#d7d7d7';
+						lastP = this;
+					};
+				}
+
+			};
+		</script>
+	</head>
+
+	<body>
+		<ul id="QQList"></ul>
+
+	</body>
+
+</html>

@@ -1,0 +1,45 @@
+@charset "utf-8";
+html {
+	font-size: 62.5%;
+}
+body {
+	background-color: #D7D7D7;
+	font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei UI", "Microsoft YaHei", SimHei, "\5B8B\4F53", simsun, sans-serif;
+	font-size: 0.16rem;
+	
+}
+
+
+body,
+h1,
+ul,
+header,
+h2,
+h3,
+h4,
+p,
+figure,
+img,
+em,
+span,
+footer,
+address,
+fieldset {
+	margin: 0;
+	padding: 0;
+}
+div,
+figure,
+figcaption {
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+}
+
+#content {
+	margin: 0 auto;
+	max-width: 60rem;
+	overflow-y: auto;
+}

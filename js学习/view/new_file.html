@@ -5,17 +5,14 @@
 		<meta charset="UTF-8">
 		<title></title>
 		<style>
-			/*li {
-				width: 100px;
-				height: 44px;
-				background-color: red;
-				margin: 10px;
-			}*/
+			/*div {
+				background-color: darkgrey;
+			}
 			
-			div {
+			#div1 {
 				width: 50px;
 				height: 50px;
-				background-color: darkgrey;
+				border: 2px solid #000000;
 				position: absolute;
 				top: 0;
 				left: 0;
@@ -23,11 +20,34 @@
 				text-align: center;
 				line-height: 50px;
 				color: #fff;
+			}*/
+			
+			li {
+				list-style: none;
+				width: 100px;
+				height: 100px;
+				background: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1506059911&di=f25958a5dddecd519527c52bf062fa24&imgtype=jpg&er=1&src=http%3A%2F%2Fimg16.3lian.com%2Fgif2016%2Fq25%2F64%2F26.jpg);
+				background-size: 100px 100px;
+				background-color: darkgoldenrod;
+				display: inline-block;
+				margin: 10px;
+				position: relative;
+				
+			}
+			
+			div {
+				width: 100px;
+				height: 30px;
+				background-color: red;
+				position: absolute;
+				top: 90px;
+				left: 0;
+				display: none;
 			}
 		</style>
 		<script>
 			window.onload = function() {
-				var oUL = document.getElementById('list');
+				//				var oUL = document.getElementById('list');
 				//					var oLi = oUL.getElementsByTagName('li');
 				//				alert(oLi.length);
 				//				var Obtn = document.getElementsByTagName('input');
@@ -49,27 +69,81 @@
 				//						innerStr += "<input type='button' value='按钮'>";
 				//				}
 				//						document.body.innerHTML += innerStr;
-				var divArr = document.getElementsByTagName('div');
-				for(var i = 0; i < 100; i++) {
-					document.body.innerHTML += '<div>' + i + '</div>';
+				//				var divArr = document.getElementsByTagName('div');
+				//				for(var i = 0; i < 100; i++) {
+				//					document.body.innerHTML += '<div>' + i + '</div>';
+				//				}
+				//				
+				//				for (var i=0;i<divArr.length;i++) {
+				//					divArr[i].style.left = 10+60*(i%10) + 'px';
+				//					divArr[i].style.top = 10 + 60*(parseInt(i/10)) + 'px';
+				//				}
+				//var oDIV = document.getElementById('div1');
+				//var oBTN = document.getElementById('btn');
+				//oDIV.onclick = function(){
+				//	oDIV.style.cssText = 'width: 100px;height: 100px;';
+				//};
+				//oBTN.onclick = function(){
+				//	oDIV.style.cssText = '';
+				//};
+
+				var oUL = document.getElementsByTagName('ul')[0];
+				var oLI = oUL.getElementsByTagName('li');
+				for(var i = 0; i < oLI.length; i++) {
+					oLI[i].onmouseover = function() {
+						this.getElementsByTagName('div')[0].style.display = 'inline-block';
+					};
+					oLI[i].onmouseout = function() {
+						this.getElementsByTagName('div')[0].style.display = 'none';
+					};
+					oLI[i].index = i;
+					oLI[i].onclick = function() {
+						alert(this.index);
+						if(this.haveImage == true){
+							this.haveImage = false;
+							this.style.background = 'url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1506059911&di=f25958a5dddecd519527c52bf062fa24&imgtype=jpg&er=1&src=http%3A%2F%2Fimg16.3lian.com%2Fgif2016%2Fq25%2F64%2F26.jpg)'
+						}else {
+							this.haveImage = true;
+							this.style.background = 'url(http://pic.qqtn.com/up/2017-8/2017080411115875945.jpg)'
+						
+						}
+						this.style.backgroundSize = '100px 100px';
+						
+						
+					};
+
 				}
-				
-				for (var i=0;i<divArr.length;i++) {
-					divArr[i].style.left = 10+60*(i%10) + 'px';
-					divArr[i].style.top = 10 + 60*(parseInt(i/10)) + 'px';
-				}
-				
+
 			};
-			//
+			
 		</script>
 	</head>
 
 	<body>
+		<!--<div id="div1" style="width: 300px;"></div>
+		<input id="btn" type="button" value="点击" />-->
 		<!--<ul id="list">
 			<li></li>
 			<li></li>
 			<li></li>
 		</ul>-->
+		<!--
+			oDIV.style.cssText 更改的时样式是标签中所写的样式
+			
+			
+		-->
+
+		<ul>
+			<li>
+				<div></div>
+			</li>
+			<li>
+				<div></div>
+			</li>
+			<li>
+				<div></div>
+			</li>
+		</ul>
 	</body>
 
 </html>

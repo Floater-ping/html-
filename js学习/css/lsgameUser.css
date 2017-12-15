@@ -1,0 +1,58 @@
+@charset "utf-8";
+.userBGD {
+	width: 100%;
+	font-size: 1.6rem;
+	text-align: right;
+	background-color: white;
+	position: relative;
+	height: 6rem;
+	margin-bottom: 0.1rem;
+}
+
+.userBGD p {
+	display: inline-block;
+	line-height: 6rem;
+}
+
+.userBGD p:first-child {
+	margin: 0;
+	position: absolute;
+	left: 1.5rem;
+}
+.userBGD p:nth-child(2) {
+	
+	padding-right: 2.5rem;
+	text-align: right;
+}
+
+.userBGD img:last-child {
+	position: absolute;
+	top: 2.08rem;
+	right: 0rem;
+}
+
+#lsIcon {
+	width: 7rem;
+	height: 7rem;
+	margin-right: 2.5rem;
+	border-radius: 50%;
+	
+}
+
+
+#showMessD {
+	background-color: #DDDDDD;
+	height: 8rem;
+	padding-top: 2rem;
+	text-align: center;
+}
+
+#showMessD p {
+	font-size: 1.4rem;
+	color: darkgray;
+	padding-bottom: 0.3rem;
+}
+
+#showMessD p:first-child {
+	font-size: 1.8rem;
+}
