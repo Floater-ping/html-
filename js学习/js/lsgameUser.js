@@ -1,4 +1,5 @@
 window.onload = function() {
+
 	var resultModel;
 	var contentDataArr = [{
 			"name": "头像",
@@ -85,7 +86,6 @@ window.onload = function() {
 			if(i == 1) {
 				createShowMessView(lsContent);
 			}
-
 		}
 	}
 
@@ -100,6 +100,42 @@ window.onload = function() {
 		pT2.innerHTML = "(个人信息仅限修改一次)";
 		divT.appendChild(pT2);
 	}
+	var cancaleB = document.getElementById('cancleBtn');
+	cancaleB.onclick = function() {
+		hiddenAlertView(0);
+	};
+	var doneB = document.getElementById('doneBtn');
+	doneB.onclick = function() {
+		hiddenAlertView(1);
+	};
+
+	//点击方法 --显示涂层
+	function itemClickFunction(itemDict, itemName) {
+
+		if(itemDict.idName == "lsIcon" || itemDict.idName == "lsSex" || itemDict.idName == "lsBus") {
+
+		} else {
+			var alertView = document.getElementsByClassName('alertView')[0];
+			alertView.className = "baseAlert md-show";
+			var titleH = document.getElementById('alertTitle');
+			titleH.innerHTML = itemDict.name;
+			var inputItem = document.getElementById('inputT');
+			inputItem.placeholder = itemDict.placeholder;
+			inputItem.value = itemName;
+		}
+
+	}
+	// 隐藏涂层
+	function hiddenAlertView(clickType) {
+		if(clickType == 1) {
+			// 保存
+			alert("点击了保存按钮");
+			// 验证
+
+		}
+		var alertView = document.getElementsByClassName('md-show')[0];
+		alertView.className = "baseAlert alertView";
+	}
 
 	//网络请求
 	var xmlhttp;
@@ -110,7 +146,8 @@ window.onload = function() {
 		// code for IE6, IE5
 		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
 	}
-	var playerid = getParams("playerid");
+
+	var playerid = 172;
 
 	if(playerid != null) {
 		xmlhttp.open("GET", "http://192.168.2.199:8080/LSGameApi/getPlayerDetailMess?gameid=1&playerid=" + playerid, true);
@@ -120,19 +157,70 @@ window.onload = function() {
 				configBaseView();
 				var tempMode = JSON.parse(xmlhttp.responseText);
 				resultModel = tempMode.content;
+
 				for(var i = 0; i < dataArrLenght; i++) {
 					var model = contentDataArr[i];
 					var modelT = document.getElementById(model.idName);
-					if(i == 0) {
-						modelT.src = resultModel[model.modelName];
-					} else {
-						modelT.innerHTML = resultModel[model.modelName];
-					}
+					var parT = modelT.parentElement;
+					var parArr = parT.getElementsByTagName('img');
+					var arrowImg = parArr[parArr.length - 1];
+					modelT.index = i;
+					var itemStr = resultModel[model.modelName];
 					modelT.style.color = "black";
+					if(itemStr == null || itemStr.length <= 0) {
+						itemStr = model.placeholder;
+						modelT.style.color = "darkgray";
+					}
+					if(i == 0) {
+						modelT.src = itemStr;
+					} else {
+						modelT.innerHTML = itemStr;
+						switch(model.modelName) {
+							case "realname":
+								if(resultModel.canModifyName == false) {
+									arrowImg.style.visibility = "hidden";
+								}
+								break;
+							case "sex":
+								if(resultModel.canModifySex == false) {
+									arrowImg.style.visibility = "hidden";
+								}
+								break;
+							case "birthday":
+								if(resultModel.canModifyBirthday == false) {
+									arrowImg.style.visibility = "hidden";
+								}
+								break;
+							case "idcard":
+								if(resultModel.canModifyBirthday == false) {
+									arrowImg.style.visibility = "hidden";
+								}
+								break;
+							case "mobile":
+								if(resultModel.canModifyBirthday == false) {
+									arrowImg.style.visibility = "hidden";
+								}
+								break;
+							case "bus_name":
+								if(resultModel.canModifyBirthday == false) {
+									arrowImg.style.visibility = "hidden";
+								}
+								break;
+							default:
+								break;
+						}
+					}
+					modelT.onclick = function() {
+						var item1 = contentDataArr[this.index];
+						itemClickFunction(item1, resultModel[item1.modelName]);
+					};
+
 				}
 			}
 		}
 	}
+
+	
 
 	// 获取链接参数
 	function getParams(key) {
@@ -143,31 +231,5 @@ window.onload = function() {
 		}
 		return null;
 	};
-	msgAlert("success", "登录成功！");
-
-	function msgAlert(type, msg) {
-		$('.msg_' + type).html(msg);
-		$('.msg_' + type).animate({
-			'top': 0
-		}, 500);
-		setTimeout(function() {
-			$('.msg_' + type).animate({
-				'top': '-3rem'
-			}, 500)
-		}, 2000);
-	}
-
-	$(document).ready(function() {
-		var htmlstyle = "<style>body{padding:0;margin:0;}.msg{color:#FFF;width:100%;height:3rem;text-align:center;font-size:1.2rem;line-height:3rem;position:fixed;top:-3rem;z-index:20;}" +
-			".msg_success{background-color:#1fcc6c;}" +
-			".msg_warning{background-color:#e94b35;}" +
-			".msg_primary{background-color:#337ab7;}" +
-			".msg_info{background-color:#5bc0de;}</style>";
-		$('head').append(htmlstyle);
-		$('body').prepend('<div class="msg msg_success"></div>' +
-			'<div class="msg msg_warning"></div>' +
-			'<div class="msg msg_primary"></div>' +
-			'<div class="msg msg_info"></div>');
-	})
 
 }

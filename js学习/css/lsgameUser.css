@@ -19,10 +19,12 @@
 	position: absolute;
 	left: 1.5rem;
 }
+
 .userBGD p:nth-child(2) {
-	
 	padding-right: 2.5rem;
 	text-align: right;
+	min-width:10rem;
+	height: 100%;
 }
 
 .userBGD img:last-child {
@@ -35,10 +37,9 @@
 	width: 7rem;
 	height: 7rem;
 	margin-right: 2.5rem;
+	margin-top: 0.5rem;
 	border-radius: 50%;
-	
 }
-
 
 #showMessD {
 	background-color: #DDDDDD;
@@ -56,3 +57,104 @@
 #showMessD p:first-child {
 	font-size: 1.8rem;
 }
+
+.baseAlert {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	max-width: 63rem;
+	min-width: 32rem;
+	z-index: 2000;
+	height: 62rem;
+	background-color: rgba(0, 0, 0, 0.35);
+	text-align: center;
+	;
+}
+
+.md-show {
+	visibility: visible;
+	-webkit-backface-visibility: visible;
+	-moz-backface-visibility: visible;
+	backface-visibility: visible
+}
+
+.alertView {
+	visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+
+
+
+/* Content styles */
+
+.md-content {
+	background: white;
+	position: relative;
+	border-radius: 3px;
+	margin: 0 auto;
+	position: fixed;
+	top: 40%;
+	left: 50%;
+	width: 50%;
+	max-width: 63rem;
+	min-width: 32rem;
+	z-index: 2000;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	-moz-transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+}
+
+.md-content h3 {
+	margin: 0;
+	padding-top: 0.6rem;
+	text-align: center;
+	font-size: 2rem;
+	font-weight: 3rem;
+	height: 4rem;
+	line-height: 4rem;
+	opacity: 0.8;
+	border-radius: 3px 3px 0 0;
+	
+}
+
+
+.md-content>input {
+	margin: 1.5rem 0 ;
+	padding: 10px 0;
+	font-size: 1.6rem;
+	background-color: #D7D7D7;
+	border-style: none;
+	border-radius: 0.5rem;
+	text-indent: 0.4rem;
+	width: 90%;
+	text-align: center;
+}
+
+.md-content>button {
+	display: block;
+	margin: 0 auto;
+	font-size: 1em;
+	width: 50%;
+	float: left;
+	height: 4rem;
+	border-style: none;
+	background-color: white;
+	color: darkcyan;
+	font-size: 1.4rem;
+	border-top:solid 0.1rem #D7D7D7;
+}
+
+#lineV {
+	background-color: #D7D7D7;
+	height: 3.4rem;
+	width: 0.1rem;
+	position: absolute;
+	left: 49%;
+	bottom: 0.25rem;
+}
+
